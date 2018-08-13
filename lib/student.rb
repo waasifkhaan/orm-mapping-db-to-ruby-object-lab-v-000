@@ -81,10 +81,10 @@ class Student
     def self.first_X_students_in_grade_10
       sql = <<-SQL
       SELECT * FROM students
-      WHERE grade < ? 
+      WHERE grade = 10 
       SQL
         DB[:conn].execute(sql,12).map do |row|
         self.new_from_db(row)
-    end
+    end.first
   end 
 end
