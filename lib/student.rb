@@ -69,4 +69,5 @@ class Student
     DB[:conn].execute(9).map do |row|
       self.new_from_db(row)
     end
+  end 
 end
