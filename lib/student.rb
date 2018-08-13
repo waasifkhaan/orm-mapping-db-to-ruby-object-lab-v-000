@@ -16,7 +16,7 @@ class Student
     SELECT * FROM students 
     SQL
     DB[:conn].execute(sql).map do |row|
-      student.new_from_db(row)
+      new_from_db(row)
     end 
   end 
     # retrieve all the rows from the "Students" database
@@ -29,7 +29,8 @@ class Student
     WHERE name = ?
     LIMIT 1
     SQL
-    DB[:conn].execute(sql,name)
+    DB[:conn].execute(sql,name).map |row|
+    
     # find the student in the database given a name
     # return a new instance of the Student class
   end
