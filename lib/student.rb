@@ -9,7 +9,7 @@ class Student
     student
   end 
     # create a new Student object given a row from the database
-  end
+  
 
   def self.all
     sql = <<-SQL
