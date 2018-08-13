@@ -70,7 +70,7 @@ class Student
       self.new_from_db(row)
     end
   end 
-  def self.count_all_students_in_grade_10
+  def self.count_all_students_in_grade_X
     sql = <<-SQL
     SELECT * FROM students
     WHERE grade = ? 
